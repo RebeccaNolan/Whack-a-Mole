@@ -1,0 +1,8 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="Nolan_Rebecca_VS22.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:Nolan_Rebecca_VS22.WinUI">
+
+</maui:MauiWinUIApplication>

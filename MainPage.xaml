@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nolan_Rebecca_VS22.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            
+            <VerticalStackLayout.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#ddebce"
+                                  Offset="0.1" />
+                    <GradientStop Color="#614927"
+                                  Offset="1.5" />
+                </LinearGradientBrush>
+            </VerticalStackLayout.Background>
+
+            <!--Title Banner-->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label x:Name="Header_label" Text="Whack-A-Mole" FontSize="Header"
+                       HorizontalOptions="CenterAndExpand" Margin="20"
+                       BackgroundColor="#518c14"
+                       FontFamily="DebroseeALPnL" TextColor="#572d11"/>
+            </HorizontalStackLayout>
+
+
+            <!--Label for High Score-->
+            <Label x:Name="HighScore_Label" 
+                   Text="High Score : 0" 
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontFamily="DebroseeALPnL"/>
+
+
+            <!--Points Counter-->
+            <HorizontalStackLayout>
+                <Label Text="Points: " 
+                       Margin="20, 10, 0, 0"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontFamily="DebroseeALPnL"
+                       FontSize="15"/>
+
+                <Label x:Name="points_label" 
+                       Text="0" 
+                       Margin="20, 10, 0, 0"
+                       TextColor="Black"
+                       FontFamily="DebroseeALPnL"
+                       FontAttributes="Bold"
+                       FontSize="15"/>
+            </HorizontalStackLayout>
+
+            <!--Timer-->
+            <HorizontalStackLayout>
+                <Label Text="Time: " 
+                       Margin="20, 10, 0, 10"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontFamily="DebroseeALPnL"
+                       FontSize="15"/>
+
+                <Label x:Name="timer_label" 
+                       Text="0" 
+                       Margin="20, 10, 0, 0"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontFamily="DebroseeALPnL"
+                       FontSize="15"/>
+
+            </HorizontalStackLayout>
+
+            <!--4x4 Grid-->
+            <Grid x:Name="Grid4" BackgroundColor="Transparent" 
+                  HorizontalOptions="CenterAndExpand"
+                  HeightRequest="300" WidthRequest="300" 
+                  VerticalOptions="CenterAndExpand"
+                  Padding="2"
+                  RowDefinitions="*, *, *, *"
+                  ColumnDefinitions="*, *, *, *"
+                  IsEnabled="True"
+                  IsVisible="True">
+
+                <Frame Grid.Row="0" Grid.Column="0" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="0" Grid.Column="1" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="0" Grid.Column="2" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="0" Grid.Column="3" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="1" Grid.Column="0" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="1" Grid.Column="1" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="1" Grid.Column="2" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="1" Grid.Column="3" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="2" Grid.Column="0" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="2" Grid.Column="1" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="2" Grid.Column="2" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="2" Grid.Column="3" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="3" Grid.Column="0" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="3" Grid.Column="1" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="3" Grid.Column="2" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+                <Frame Grid.Row="3" Grid.Column="3" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="50"/>
+
+
+                <!--Image-->
+                <Image x:Name="mole_image4" 
+                       Source="angry.png"
+                       Grid.Row="2"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="false">
+                    <!-- Tap -->
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped"
+                                              NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <!--5x5 Grid-->
+            <Grid x:Name="Grid5" BackgroundColor="Transparent" 
+                  HorizontalOptions="CenterAndExpand"
+                  HeightRequest="300" WidthRequest="300" 
+                  VerticalOptions="CenterAndExpand"
+                  RowDefinitions="*,*,*,*,*"
+                  ColumnDefinitions="*,*,*,*,*"
+                  IsVisible="False"
+                  IsEnabled="False">
+
+                <Frame Grid.Row="0" Grid.Column="0" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="0" Grid.Column="1" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="0" Grid.Column="2" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="0" Grid.Column="3" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="0" Grid.Column="4" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="1" Grid.Column="0" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="1" Grid.Column="1" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="1" Grid.Column="2" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="1" Grid.Column="3" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="1" Grid.Column="4" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="2" Grid.Column="0" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="2" Grid.Column="1" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="2" Grid.Column="2" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="2" Grid.Column="3" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="2" Grid.Column="4" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="3" Grid.Column="0" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="3" Grid.Column="1" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="3" Grid.Column="2" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="3" Grid.Column="3" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="3" Grid.Column="4" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="4" Grid.Column="0" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="4" Grid.Column="1" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="4" Grid.Column="2" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="4" Grid.Column="3" BorderColor="#572d11" 
+                       BackgroundColor="#572d11"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <Frame Grid.Row="4" Grid.Column="4" BorderColor="#614927" 
+                       BackgroundColor="#614927"
+                       Padding="10"
+                       Margin="2"
+                       CornerRadius="35"/>
+
+                <!--Image-->
+                <Image x:Name="mole_image5" 
+                       Source="angry.png"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="false">
+                    <!-- Tap -->
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped"
+                                              NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <VerticalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <!--Start Button-->
+                    <Image Source="molesaddark.png" HeightRequest="50"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+
+                    <Button x:Name="StartBtn" 
+                     Text="Start"
+                     WidthRequest="150"
+                     Clicked="StartBtn_Clicked"
+                     TextColor="White"
+                     BorderWidth="2"
+                     Margin="0,10,0,0"
+                     BackgroundColor="#518c14"
+                     FontAttributes="Bold"/>
+
+                    <Image Source="molesaddark.png" HeightRequest="50"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!--Button for starting a new game-->
+            <Button Text="New Game" 
+                    Clicked="ResetGame_Clicked"
+                    WidthRequest="150"
+                    TextColor="White"
+                    BorderWidth="2"
+                    BackgroundColor="ForestGreen"
+                    FontAttributes="Bold"/>
+
+            <!--Switch Grid Button-->
+            <Button x:Name="SwitchGridBtn"
+                    Text="Switch Grid"
+                    WidthRequest="150"
+                    Clicked="SwitchGridBtn_Clicked"
+                    TextColor="White"
+                    BackgroundColor="#572d11"
+                    BorderWidth="2"
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
